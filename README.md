@@ -1,9 +1,6 @@
 # Superposition
-Notice: The file is pre run so it is pdf format from Jupyter Notebook
+Notice: One of the files are pre run so it is pdf format from Jupyter Notebook, but the google collab is the interactive version.
 
-Also: Click the Bernstein_Vazirani(2) File to view my project!!!
-
-One more note: I added the link to a google collab version so the cells are runnable if the PDF format is not efficient the file is called Google collab BV Alg
 
 Bernstein Vazirani Algorithm with Qiskit
 
@@ -30,4 +27,4 @@ Contents
 
 _Requirements_
 
-Nothing, Everything is pre run and in pdf format
+Nothing, Everything is pre run and in pdf/google collab format
