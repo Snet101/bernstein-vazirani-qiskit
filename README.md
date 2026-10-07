@@ -1,30 +1,75 @@
-# Superposition
-Notice: One of the files are pre run so it is pdf format from Jupyter Notebook, but the google collab is the interactive version.
+# Bernstein–Vazirani Algorithm with Qiskit
 
+This project implements and explains the **Bernstein–Vazirani quantum algorithm** using Qiskit.
 
-Bernstein Vazirani Algorithm with Qiskit
+The algorithm determines a hidden bit string encoded inside a black-box function. A classical deterministic approach may require multiple queries, while the quantum algorithm can recover the entire bit string with a single oracle query.
 
-This repository contains a Jupyter Notebook that demonstrates the **Bernstein-Vazirani quantum algorithm**, implemented using [Qiskit](https://qiskit.org/). The algorithm is designed to find a hidden bit string in a black-box function with **only one quantum query**, showcasing the power of quantum parallelism.
+## Project Overview
 
----
+The notebook walks through:
 
-About the Algorithm
+- the Bernstein–Vazirani problem
+- quantum-circuit construction
+- oracle implementation
+- Hadamard transformations
+- circuit simulation
+- measurement results
+- recovery of the hidden bit string
 
-The **Bernstein–Vazirani algorithm** solves the problem of determining a hidden bitstring `s` given a function `f(x) = s · x mod 2`. While a classical algorithm would require `n` queries for an `n`-bit string, the quantum version solves it with a **single query** using quantum superposition and interference.
+## Repository Contents
 
----
+- `bernstein_vazirani.ipynb`  
+  Main implementation and explanation of the Bernstein–Vazirani algorithm.
 
-Contents
+## How It Works
 
-- `Bernstein_Vazirani (2).ipynb`: The main Jupyter notebook with:
-  - Background explanation of the algorithm
-  - Implementation in Qiskit
-  - Visualization of quantum circuits
-  - Simulation results using Qiskit Aer
-  - Measurement analysis to extract the hidden bitstring
+Suppose a hidden bit string is:
 
----
+```text
+s = 1011
+```
 
-_Requirements_
+The oracle represents the function:
 
-Nothing, Everything is pre run and in pdf/google collab format
+```text
+f(x) = s · x mod 2
+```
+
+The Bernstein–Vazirani algorithm uses quantum superposition and interference to recover the hidden string after a single oracle query.
+
+The circuit:
+
+1. prepares the input qubits in superposition
+2. applies the Bernstein–Vazirani oracle
+3. applies Hadamard gates again
+4. measures the input register
+5. recovers the hidden bit string from the measurement result
+
+## Tech Stack
+
+- Python
+- Qiskit
+- Qiskit Aer
+- Jupyter Notebook
+
+## Running the Project
+
+Install the required packages:
+
+```bash
+pip install qiskit qiskit-aer
+```
+
+Then open:
+
+```text
+bernstein_vazirani.ipynb
+```
+
+in Jupyter Notebook, JupyterLab, or Google Colab.
+
+## What I Learned
+
+This project helped me understand how quantum algorithms use superposition, interference, and oracle-based computation to extract information more efficiently than a straightforward classical query process.
+
+It also gave me experience constructing and simulating quantum circuits with Qiskit.
